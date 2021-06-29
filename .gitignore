@@ -40,7 +40,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+.idea
 # TypeScript v1 declaration files
 typings/
 
@@ -106,3 +106,4 @@ dist
 .test2.js
 .test3.js
 .screenshot11.png
+.learned-spider-309416-54680bd9d831.json
