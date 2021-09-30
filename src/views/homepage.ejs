@@ -1,45 +1,310 @@
-
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Z - Home</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-
 <div class="container">
-    <div class="row">
-        <form >
-            <fieldset>
-                <div class="form-group">
-                    <label for="room" class="form-label mt-4">Room</label>
-                    <input type="text" id="room" class="form-control" id="room" placeholder="Room">
-                </div>
-                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-            </fieldset>
-        </form>
-    </div>
-    <%
-    if(typeof(data) != 'undefined' && data != '') {
-    %>
-    <div class="card border-primary  mb-3" style="max-width: 20rem;">
-        <div class="card-header"> <a href="/<%=data %>" class="link-info"><%=data %> </a></div>
-        <div class="card-body">
-            <h4 class="card-title">Secondary card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>Hệ thống AI theo dõi lịch học</h1>
+                <p class="lead">Hệ thống hiển thị lịch học và thống kê các lớp thuộc khoa Công nghệ Thông tin. </p>
+            </div>
+            <div class="col-lg-4"><img style="width:150px" src="img/lac_hong_logo.png" alt="ĐH Lạc Hồng"></div>
         </div>
     </div>
-    <%
-    }
-    %>
+    <div class="row p-3">
+        <div class="col-md-3">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header"><%= khoa18 %> - <%= data18.length %></div>
+                <div class="card-body">
+                    <%
+                    for(var i = 0; i < data18.length; i++) {
+                    if ( i < 4 ){
+                    %>
+
+                        <h5 class="card-title"><%= data18[i].lop %></h5>
+                        <p class="card-text"><%= data18[i].thoigian %> <%= data18[i].idphong %></p>
+                        <p class="card-text">GV: <%= data18[i].gvtat %></p>
+
+                    <%
+                    }
+                    }
+                    %>
+                    <div id="demo" class="collapse">
+                        <%
+                        for(var i = 0; i < data19.length; i++) {
+                        if (i > 3){
+                        %>
+                            <h5 class="card-title"><%= data19[i].lop %></h5>
+                            <p class="card-text"><%= data19[i].thoigian %> <%= data19[i].idphong %></p>
+                            <p class="card-text">GV: <%= data19[i].gvtat %> </p>
+                        <%
+                        }
+                        }
+                        %>
+                    </div>
+                        <%
+                        if(data18.length > 4){
+                        %>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo"> Xem
+                                Thêm
+                            </button>
+                        <%
+                        } %>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header"><%= khoa19 %> - <%= data19.length %></div>
+                <div class="card-body">
+                    <%
+                    for(var i = 0; i < data19.length; i++) {
+                    if ( i < 4){
+                    %>
+                        <h5 class="card-title"><%= data19[i].lop %></h5>
+                        <p class="card-text"><%= data19[i].thoigian %> <%= data19[i].idphong %></p>
+                        <p class="card-text">GV: <%= data19[i].gvtat %></p>
+                    <%
+                    }
+                    }
+                    %>
+                    <div id="demo2" class="collapse">
+                        <%
+                        for(var i = 0; i < data19.length; i++) {
+                        if (i > 3){
+                        %>
+                            <h5 class="card-title"><%= data19[i].lop %></h5>
+                            <p class="card-text"><%= data19[i].thoigian %> <%= data19[i].idphong %></p>
+                            <p class="card-text">GV: <%= data19[i].gvtat %> </p>
+                        <%
+                        }
+                        }
+                        %>
+                    </div>
+                        <%
+                        if(data19.length >4){
+                        %>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo2"> Xem
+                                Thêm
+                            </button>
+                        <%
+                        } %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header"><%= khoa20 %> - <%= data20.length %></div>
+                <div class="card-body">
+                    <%
+                    for(var i = 0; i < data20.length; i++) {
+                    if ( i < 4){
+                    %>
+                        <h5 class="card-title"><%= data20[i].lop %></h5>
+                        <p class="card-text"><%= data20[i].thoigian %> <%= data20[i].idphong %></p>
+                        <p class="card-text"> GV: <%= data20[i].gvtat %></p>
+                    <%
+                    }
+                    }
+                    %>
+                    <div id="demo3" class="collapse">
+                        <%
+                        for(var i = 0; i < data20.length; i++) {
+                        if (i > 3){
+                        %>
+                            <h5 class="card-title"><%= data20[i].lop %></h5>
+                            <p class="card-text"><%= data20[i].thoigian %> <%= data20[i].idphong %></p>
+                            <p class="card-text">GV: <%= data20[i].gvtat %> </p>
+                        <%
+                        }
+                        }
+                        %>
+                    </div>
+                        <%
+                        if(data20.length > 4){
+                        %>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo3"> Xem
+                                Thêm
+                            </button>
+                        <%
+                        } %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header"><%= khoa21 %> - <%= data21.length %></div>
+                <div class="card-body">
+                    <%
+                    for(var i = 0; i < data21.length; i++) {
+                    if ( i < 4){
+                    %>
+                        <h5 class="card-title"><%= data21[i].lop %></h5>
+                        <p class="card-text"><%= data21[i].thoigian %> <%= data21[i].idphong %></p>
+                        <p class="card-text">GV: <%= data21[i].gvtat %></p>
+                    <%
+                    }
+                    }
+                    %>
+
+                    <div id="demo4" class="collapse">
+                        <%
+                        for(var i = 0; i < data21.length; i++) {
+                        if (i > 3){
+                        %>
+                            <h5 class="card-title"><%= data21[i].lop %></h5>
+                            <p class="card-text"><%= data21[i].thoigian %> <%= data21[i].idphong %></p>
+                            <p class="card-text">GV: <%= data21[i].gvtat %> </p>
+                        <%
+                        }
+                        }
+                        %>
+                    </div>
+                    <%
+                    if(data21.length >4){
+                    %>
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo4"> Xem
+                            Thêm
+                        </button>
+                    <%
+                    } %>
 
 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-4">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/la.jpg" alt="Los Angeles" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>Los Angeles</h3>
+                            <p>We had such a great time in LA!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/chicago.jpg" alt="Chicago" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>Chicago</h3>
+                            <p>Thank you, Chicago!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ny.jpg" alt="New York" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>New York</h3>
+                            <p>We love the Big Apple!</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+    window.addEventListener('load', setup);
+
+    async function setup() {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const globalTemps = await getData();
+        const labels = [
+            'Thứ Hai',
+            'Thứ Ba',
+            'Thứ Tư',
+            'Thứ Năm',
+            'Thứ Sáu',
+            'Thứ Bảy',
+        ];
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: '19CT113',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: globalTemps.data3
+                    }, {
+                        label: '19CT114',
+                        backgroundColor: 'rgb(245,99,255)',
+                        borderColor: 'rgb(245,99,255)',
+                        data: globalTemps.data4
+                    }, {
+                        label: '19CT112',
+                        backgroundColor: 'rgb(208,15,70)',
+                        borderColor: 'rgb(208,15,70)',
+                        data: globalTemps.data2
+                    }, {
+                        label: '19CT111',
+                        backgroundColor: 'rgb(255,167,99)',
+                        borderColor: 'rgb(255,167,99)',
+                        data: globalTemps.data1
+                    }
+                ]
+            },
+            options: {}
+        });
+    }
+
+
+    async function getData() {
+        const res1 = await axios.get('http://localhost:8080/chart/19ct111');
+        const res2 = await axios.get('http://localhost:8080/chart/19ct112');
+        const res3 = await axios.get('http://localhost:8080/chart/19ct113');
+        const res4 = await axios.get('http://localhost:8080/chart/19ct114');
+
+        const data2 = res2.data;
+        const data1 = res1.data;
+        const data3 = res3.data;
+        const data4 = res4.data;
+
+        return {data1, data2, data3, data4}
+    }
+
+</script>
 </body>
 </html>

@@ -99,7 +99,7 @@ dist
 
 # DynamoDB Local files
 .dynamodb/
-
+/test
 # TernJS port file
 .tern-port
 .test.js
@@ -107,3 +107,4 @@ dist
 .test3.js
 .screenshot11.png
 .learned-spider-309416-54680bd9d831.json
+.idea/

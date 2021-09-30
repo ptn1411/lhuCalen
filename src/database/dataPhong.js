@@ -5,16 +5,36 @@ const connection = mysql.createConnection({
     password: 'ptn141122',
     database: 'lhucalen'
 });
-let data = (idp) => {
-return new Promise(function(resolve, reject){
-    const sql = 'SELECT * FROM calen WHERE idphong = ?';
-    connection.query(sql, [idp], function (err, result) {
-        if (err) throw err;
-        resolve(result);
+let datap = (idp) => {
+    return new Promise(function (resolve, reject) {
+        const sql = 'SELECT * FROM calen WHERE idphong = ?';
+        connection.query(sql, [idp], function (err, result) {
+            if (err) throw err;
+            resolve(result);
+        });
     });
-});
+}
+let datalop = (idp) => {
+    return new Promise(function (resolve, reject) {
 
+        const sql = `SELECT * FROM calen WHERE lop LIKE '%${idp}%'`;
+        connection.query(sql, [idp], function (err, result) {
+            if (err) throw err;
+            resolve(result);
+        });
+    });
+}
+let datams = (idp) => {
+    return new Promise(function (resolve, reject) {
+        const sql = 'SELECT * FROM calen WHERE mssv = ?';
+        connection.query(sql, [idp], function (err, result) {
+            if (err) throw err;
+            resolve(result);
+        });
+    });
 }
 module.exports = {
-    data: data
+    datap: datap,
+    datalop: datalop,
+    datams: datams
 }

@@ -1,0 +1,8 @@
+const home = require('./src/database/home');
+const data18 =  home.khoa18('k18','08/17/2021');
+data18.then(function (result) {
+    // for (var i = 0; i < result.length; i++) {
+    //    console.log(result)
+    // }
+    console.log(result)
+})
